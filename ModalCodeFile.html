@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+      .navbar{
+    background-color: rgb(235, 61, 221);
+    border-radius: 10px;
+    position: fixed;
+    top: 10px;
+    right: 3px;
+    width: 100%;
+ }
+ .navbar ul{
+    overflow: auto;
+ }
+ .navbar li{
+    float:left;
+    list-style: none;
+    margin: 10px 20px;
+ }
+ .navbar li a{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+ }
+ .navbar li a:hover{
+    color: black;
+ }
+
+ /* position styling  */
+ .container{
+    border: 1px solid black;
+    margin-top: 100px;
+    background-color: rgb(215, 248, 237);
+ }
+ .box{
+    display: inline-block;
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+ }
+
+ #b1{
+    position: relative;
+    top: 10px;
+ }
+#b2{
+    position: absolute;
+   right: 30px;
+}
+#Click{
+    background-color: rgb(60, 63, 63);
+    /* width: 100px; */
+    display: block; 
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+/* displaying the text styling */
+input{
+   margin: 10px;
+   border: 2px solid gray;
+   padding: 10px;
+   display: block;
+}
+#ctext{
+   background-color: rgb(60, 63, 63);
+   margin: 10px auto;
+   border: none;
+   border-radius: 5px;
+   font-weight: bold;
+   font-size: 15px;
+   color: white;
+   padding: 10px 20px;
+   text-align: center;
+   cursor: pointer;
+}
+.d-area{
+   width: 30%;
+   margin-top: 20px;
+   padding: 30px;
+   border: 2px solid black;
+   background-color: rgb(242, 186, 226);
+}
+
+/* Modal styling */
+h3{
+   text-align: center;
+}
+#mybtn{
+   background-color: rgb(60, 63, 63);
+   margin: 10px auto;
+   padding: 10px 20px;
+   color: white;
+}
+.modal{
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   right:0;
+    width: 100%; 
+   height: 100%;
+   overflow: auto;
+   background-color:rgb(49, 59, 60);
+   background-color:rgba(162, 196, 246, 0.4); 
+}
+
+.modal-content{
+   background-color: #fefefe;
+   margin: 15% auto;
+   padding: 20px;
+   border: 1px solid #3a3a3a;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   width: 90%;
+}
+
+.close{
+   color:black;
+   float: right;
+   font-size: 30px;
+   font-weight: bold;
+}
+.close:hover,
+.close:focus{
+   color: red;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+    </style>
+</head>
+<!-- Modal building -->
+<h3>Modal Popup</h3>
+<!-- button for opening the modal -->
+ <button id="mybtn">Open</button>
+<!-- main modal -->
+ <div id="myModal" class="modal">
+    <!-- content -->
+    <div class="modal-content">
+        <!-- for cross sign of closing  -->
+        <span class="close">&times;</span>
+        <p>The popup for the new model</p>
+    </div>
+ </div>
+ <h1>hello</h1>
+<script >
+  var modal=document.getElementById("myModal");
+var btn=document.getElementById("mybtn");
+var span=document.getElementsByClassName("close")[0];
+btn.onclick=function(){
+    modal.style.display="block";
+}
+span.onclick=function(){
+    modal.style.display="none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+</body>
+
+</html>
